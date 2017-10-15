@@ -21,7 +21,7 @@ public class ApplicationRunner implements CommandLineRunner {
         private Broadcaster broadcaster;
         
         private AkamaiLookupProvider hostLookupProvider = new AkamaiLookupProvider();
-        private CheckTorProjectLookupProvider torLookupprovider = new CheckTorProjectLookupProvider();
+        private CheckTorProjectLookupProvider torLookuprovider = new CheckTorProjectLookupProvider();
         
         public void run(String... args) throws Exception {
                 
@@ -37,7 +37,7 @@ public class ApplicationRunner implements CommandLineRunner {
                 broadcaster.broadcastExternalAddressChange(ip);
                 
                 // checking tor gateway
-                boolean isRouted = torLookupprovider.isRoutedThroughTor();
+                boolean isRouted = torLookuprovider.isRoutedThroughTor();
                 broadcaster.broadcastTorGatewayChange(isRouted);
         }
 
